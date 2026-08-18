@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="google-adsense-account" content="ca-pub-8471772384803302">
+<title>doodlz.app - A Fun Multiplayer Game Where You Draw and Guess</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="doodlz.app is a free online multiplayer drawing and guessing game for all ages. Draw, guess and score points with players around the world. No download, no account needed.">
+<meta name="theme-color" content="#4B0082">
+<meta property="og:title" content="doodlz.app - A Fun Multiplayer Game Where You Draw and Guess">
+<meta property="og:description" content="Draw, guess and win. Free online multiplayer drawing game for all ages. No download, no account.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/style.css">
+<link rel="canonical" href="/">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8471772384803302" crossorigin="anonymous"></script>
+<script src="/ad-slots.js"></script>
+</head>
+<body>
+
+<!-- ============================ HOME ============================ -->
+<div id="home" class="screen">
+  <div class="home-wrap">
+    <h1 class="logo" id="homeLogo" aria-label="doodlz.app" onclick="location.reload()" style="cursor:pointer" title="Refresh">
+      <span class="l l1">d</span><span class="l l2">o</span><span class="l l3">o</span><span class="l l4">d</span><span class="l l5">l</span><span class="l l6">z</span><span class="l dot">.</span><span class="l l7">a</span><span class="l l8">p</span><span class="l l9">p</span>
+    </h1>
+
+    <div class="theme-row">
+      <button id="themeToggle" class="theme-switch" type="button" aria-pressed="false" title="Light / dark mode">
+        <span class="track"><span class="knob"></span></span>
+        <span class="theme-label" id="themeLabel">Light mode</span>
+      </button>
+      <span class="online-pill" id="onlineCount">0 online</span>
+    </div>
+
+    <div class="home-top">
+      <div class="card login-card">
+        <div class="login-grid">
+          <div class="avatar-picker">
+            <div class="pick-row">
+              <div class="arrow-col">
+                <button class="arrow" data-av="color" data-dir="-1" aria-label="Previous look">&#9664;</button>
+                <button class="arrow" data-av="face" data-dir="-1" aria-label="Previous face">&#9664;</button>
+                <button class="arrow" data-av="acc" data-dir="-1" aria-label="Previous accessory">&#9664;</button>
+              </div>
+              <canvas id="avatarPreview" width="192" height="192" class="avatar-big"></canvas>
+              <div class="arrow-col">
+                <button class="arrow" data-av="color" data-dir="1" aria-label="Next look">&#9654;</button>
+                <button class="arrow" data-av="face" data-dir="1" aria-label="Next face">&#9654;</button>
+                <button class="arrow" data-av="acc" data-dir="1" aria-label="Next accessory">&#9654;</button>
+              </div>
+            </div>
+            <button id="randomizeAvatar" class="dice" title="Randomize your Avatar!">&#9860; Randomize</button>
+          </div>
+
+          <div class="login-fields">
+            <input id="nameInput" class="input" type="text" maxlength="14" minlength="2" placeholder="Enter your name (optional)" autocomplete="off" spellcheck="false">
+            <p class="hint-line">Leave it blank for a random name, or choose your own.</p>
+            <button id="playBtn" class="btn btn-green big">Play!</button>
+            <div class="room-code-row">
+              <span style="color:white;font-size:13px;font-weight:700;">or enter a room code</span>
+              <input id="roomCodeInput" class="input room-code-input" type="text" maxlength="5" placeholder="Code" autocomplete="off" autocapitalize="characters" spellcheck="false" style="width:110px;padding:6px;">
+              <button id="joinBtn" class="btn btn-blue" style="padding:6px 10px;">Join</button>
+            </div>
+            <div id="joinNotice" class="notice hidden"></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card lobby-card">
+        <div class="lobby-head">Lobbies open <span id="lobbyCount" class="lobby-count">0</span></div>
+        <div id="lobbyList" class="lobby-list"><div class="lobby-empty">Looking for lobbies...</div></div>
+      </aside>
+    </div>
+
+    <div class="ad-slot ad-home" data-ad-place="home"></div>
+
+    <div class="card info-card">
+      <div class="tabs">
+        <button class="tab active" data-tab="about">About</button>
+        <button class="tab" data-tab="news">News</button>
+        <button class="tab" data-tab="how">How to play</button>
+        <button class="tab" data-tab="rules">Rules &amp; Legal</button>
+      </div>
+
+      <div class="tab-body" data-body="about">
+        <p><b>doodlz.app</b> is a free online multiplayer drawing and guessing game. Each turn one player draws a secret word while everybody else races to guess it in the chat. The faster you guess, the more points you score. No download and no account required &mdash; just press Play.</p>
+        <p><b>No cheating:</b> while a round is running, the guessers cannot see the current drawer's chat messages, so the drawer can never spell out or hint at the word.</p>
+        <p><a href="/about">More about doodlz.app</a> &middot; <a href="/how-to-play">Full how to play guide</a> &middot; <a href="/privacy">Privacy policy</a> &middot; <a href="/terms">Terms &amp; rules</a> &middot; <a href="/contact">Contact</a></p>
+      </div>
+
+      <div class="tab-body hidden" data-body="news">
+        <p><b>Fresh paint</b></p>
+        <p>New color page background and new auto generated usernames.</p>
+        <p class="muted">&mdash; the doodlz.app team</p>
+      </div>
+
+      <div class="tab-body hidden" data-body="how">
+        <ol>
+          <li>Pick one of the words you are offered to draw.</li>
+          <li>Draw it &mdash; no letters, numbers or spelling allowed.</li>
+          <li>Let the other players guess your drawing in the chat.</li>
+          <li>On your turn to watch, guess the other drawings as fast as you can.</li>
+          <li>The player with the most points at the end wins.</li>
+        </ol>
+      </div>
+
+      <div class="tab-body hidden" data-body="rules">
+        <h3>Rules &amp; Legal</h3>
+        <p class="muted">Last updated: 2026. By using doodlz.app you agree to everything on this page. If you do not agree, please do not use the site.</p>
+
+        <h4>1. Who can play</h4>
+        <p>doodlz.app is a general audience game intended to be safe and appropriate for all ages. There are no accounts, no logins and no age gate. Children may play, and for that reason every rule below is enforced with a family friendly standard. If you are under the age of digital consent in your country (for example under 13 in the United States or under 16 in parts of the EU), please play with the knowledge and permission of a parent or guardian.</p>
+
+        <h4>2. Content rules &mdash; drawings, chat messages and usernames</h4>
+        <p>Everything you draw, type or name yourself must be suitable for a young audience. The following are strictly forbidden anywhere on doodlz.app:</p>
+        <ul>
+          <li>Nudity, sexual content, sexual references, or anything suggestive.</li>
+          <li>Any sexual content involving minors, in any form. This is reported to the authorities.</li>
+          <li>Graphic violence, gore, self harm, suicide content, or encouragement of either.</li>
+          <li>Hate speech, slurs, or harassment based on race, ethnicity, nationality, religion, gender, gender identity, sexual orientation, age or disability.</li>
+          <li>Bullying, threats, intimidation, doxxing or sharing anyone's personal information.</li>
+          <li>Drugs, alcohol, tobacco, vaping, weapons or gambling promotion.</li>
+          <li>Extremist, terrorist or violent political content.</li>
+          <li>Spam, advertising, referral links, scams, phishing or malware links.</li>
+          <li>Impersonating another player, a moderator or the site owner.</li>
+          <li>Cheating, botting, automated clients, exploiting bugs, or interfering with other players' games.</li>
+          <li>Copyright infringing material that you do not have the right to draw or post.</li>
+        </ul>
+        <p>Do not share personal information &mdash; your real full name, address, school, phone number, email, or social media handles &mdash; and never ask another player for theirs.</p>
+
+        <h4>3. Moderation and enforcement</h4>
+        <p>Chat is filtered automatically and a rate limiter removes spammers. Players can mute, report and votekick each other. A votekick requires at least three players in the room and a majority vote. Breaking these rules can result in your messages being blocked and your removal from a room at any time, without notice and at our sole discretion.</p>
+
+        <h4>4. Reporting</h4>
+        <p>Use the in-game report option on a player, or email <a href="mailto:wizards72727@gmail.com">wizards72727@gmail.com</a>. Reports of illegal content or content endangering a child are treated as urgent. Include the room, the approximate time and the username.</p>
+
+        <h4>5. Privacy</h4>
+        <p>doodlz.app does not require an account and does not ask for your name, email, phone number or date of birth. Your chosen nickname and avatar are held in your browser's local storage on your own device and are sent to the game server only for the duration of a game. Drawings, chat messages and nicknames exist in server memory only while the room is live and are discarded when the room closes; we do not build player profiles and we do not sell data.</p>
+        <p>Standard technical data such as IP address and browser user agent is processed transiently to run the realtime connection, prevent abuse and enforce short kick cooldowns.</p>
+
+        <h4>6. Advertising</h4>
+        <p>This site shows non-intrusive ads served by Google AdSense. Ads never cover the game canvas or chat, and advertising never interferes with gameplay.</p>
+
+        <h4>7. Acceptable use</h4>
+        <p>Do not attack, overload, probe or disrupt the service, do not use bots or scripted clients, and do not attempt to access parts of the service you are not authorised to use.</p>
+
+        <h4>8. Intellectual property</h4>
+        <p>The doodlz.app name, code, artwork and word list belong to the site owner. Do not copy, resell, reverse engineer, scrape or redistribute the game. Anything you draw remains yours, but by drawing it in a room you allow it to be displayed to the other players in that room.</p>
+
+        <h4>9. No warranty and limitation of liability</h4>
+        <p>doodlz.app is provided "as is" and "as available", free of charge, with no warranty of any kind. The service may be interrupted, changed or discontinued at any time. To the maximum extent permitted by law, the site owner is not liable for any indirect, incidental or consequential damages arising from your use of the service.</p>
+
+        <h4>10. Changes</h4>
+        <p>These rules may be updated at any time. Continued use after a change means you accept the updated version.</p>
+
+        <h4>11. Contact</h4>
+        <p>Questions, reports, legal notices and removal requests: <a href="mailto:wizards72727@gmail.com">wizards72727@gmail.com</a></p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span>&copy; doodlz.app</span>
+      <span class="sep">&middot;</span>
+      <a href="mailto:wizards72727@gmail.com">Contact</a>
+      <span class="sep">&middot;</span>
+      <a href="/about">About</a>
+      <span class="sep">&middot;</span>
+      <a href="/how-to-play">How to play</a>
+      <span class="sep">&middot;</span>
+      <a href="/privacy">Privacy</a>
+      <span class="sep">&middot;</span>
+      <a href="/terms">Terms</a>
+      <span class="sep">&middot;</span>
+      <a href="#" id="rulesLink">Rules &amp; Legal</a>
+      <span class="muted">Users are responsible for the content they create and share on the platform. The site owner is not liable for user-generated content such as drawings, chat messages, usernames, or any other submissions made by users.</span>
+    </footer>
+  </div>
+</div>
+
+<!-- ============================ GAME ============================ -->
+<div id="game" class="screen hidden">
+  <div class="game-shell">
+    <div class="game-head">
+      <h2 class="logo mini" id="gameLogo" title="Back to the home page (Refresh)">
+        <span class="l l1">d</span><span class="l l2">o</span><span class="l l3">o</span><span class="l l4">d</span><span class="l l5">l</span><span class="l l6">z</span><span class="l dot">.</span><span class="l l7">a</span><span class="l l8">p</span><span class="l l9">p</span>
+      </h2>
+    </div>
+
+    <div class="topbar">
+      <div class="timer"><span class="clock">&#9201;</span><span id="timeLeft">0</span></div>
+      <div id="roundInfo" class="round">Round 0 of 0</div>
+      <div id="playerCount" class="pcount" title="Players in this room">0/9</div>
+      <div class="word-box">
+        <div id="wordLen" class="word-len"></div>
+        <div id="wordHint" class="word-hint">&nbsp;</div>
+      </div>
+      <button id="themeToggleGame" class="icon-btn" title="Light / dark mode">&#9681;</button>
+      <button id="gearBtn" class="icon-btn" title="Settings">&#9881;</button>
+    </div>
+
+    <div class="game-grid">
+      <aside class="panel players-panel">
+        <div id="playerList" class="player-list"></div>
+        <button id="roomCodeBar" class="room-code-bar" title="Copy the room code">Room code: <b id="roomCodeText">-----</b></button>
+      </aside>
+
+      <main class="panel canvas-panel">
+        <div class="canvas-stage">
+          <div class="canvas-holder">
+            <canvas id="board" width="800" height="600"></canvas>
+            <div id="feedbackRow" class="feedback-row hidden">
+              <button id="likeBtn" class="fb like" title="Like the drawing">&#128077;<span id="likeCount">0</span></button>
+              <button id="dislikeBtn" class="fb dislike" title="Dislike the drawing">&#128078;<span id="dislikeCount">0</span></button>
+            </div>
+            <div id="overlay" class="overlay hidden"></div>
+            <div id="brushHint" class="brush-hint hidden">10 px</div>
+          </div>
+        </div>
+
+        <div id="toolbar" class="toolbar hidden">
+          <div id="palette" class="palette"></div>
+          <div class="tools">
+            <button class="tool active" data-tool="0" title="Pen (B)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 3.5L2.5 18.5V21.5H5.5L20.5 6.5L17.5 3.5Z" fill="#f5b642" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="tool" data-tool="1" title="Eraser (S)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L5 15V19H9L19 9L15 5Z" fill="#5aa9e6" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 19L13 15" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+            <button class="tool" data-tool="2" title="Fill (F)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4L4 10L9 15L15 9L10 4Z" fill="#3ec46d" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/><path d="M18 14C18 14 20 16 20 18C20 19.1046 19.1046 20 18 20C16.8954 20 16 19.1046 16 18C16 16 18 14 18 14Z" fill="#ef6c57" stroke="#000" stroke-width="1.5"/></svg>
+            </button>
+            <button class="tool" id="undoBtn" title="Undo (U)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6V3L1 8L7 13V10C11 10 13 12 14 15C13 11 10 6 7 6Z" fill="#8e6ce0" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="tool" id="clearBtn" title="Clear canvas (C)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7H18L17 20H7L6 7Z" fill="#e05a4f" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.5 10.5V17.5M14.5 10.5V17.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M9 2V4H15V2" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sizes">
+              <button class="size" data-size="0"><i style="width:6px;height:6px"></i></button>
+              <button class="size active" data-size="1"><i style="width:12px;height:12px"></i></button>
+              <button class="size" data-size="2"><i style="width:20px;height:20px"></i></button>
+              <button class="size" data-size="3"><i style="width:26px;height:26px"></i></button>
+            </div>
+            <div id="currentColor" class="current-color"></div>
+          </div>
+        </div>
+      </main>
+
+      <aside class="panel chat-panel">
+        <div id="chatLog" class="chat-log"></div>
+        <form id="chatForm" class="chat-form" autocomplete="off">
+          <input id="chatInput" class="chat-input" maxlength="150" placeholder="Type your guess here..." autocomplete="off">
+          <button class="btn btn-green send" type="submit">Send</button>
+        </form>
+      </aside>
+    </div>
+
+
+  </div>
+</div>
+
+<!-- ============================ MODALS ============================ -->
+<div id="modal" class="modal hidden">
+  <div class="modal-card">
+    <button id="modalClose" class="modal-close">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<div id="floatLayer" class="float-layer"></div>
+<div id="ctxMenu" class="ctx hidden"></div>
+<div id="toast" class="toast hidden"></div>
+
+
+<script src="/usernames.js"></script>
+<script src="/words.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
